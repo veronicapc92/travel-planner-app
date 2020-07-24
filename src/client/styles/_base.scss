@@ -1,0 +1,18 @@
+body,
+html {
+  $transparency: 0.25;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(139, 71, 71, $transparency),
+      rgba(0, 0, 0, $transparency)
+    ),
+    url("../assets/background-image.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
