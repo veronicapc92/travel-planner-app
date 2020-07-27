@@ -5,8 +5,8 @@ form {
   $font-weight: 500;
 
   margin: 40px auto 0 auto;
-  width: 45%;
-  min-width: 700px;
+  width: 50%;
+  min-width: 900px;
   padding: 30px 0;
   background-color: rgba(0, 0, 0, 0.4);
   font-family: $font-family;
@@ -55,7 +55,8 @@ form {
     }
   }
 
-  #destination::placeholder {
+  #city::placeholder,
+  #country::placeholder {
     font-family: $font-family;
     font-size: $font-size;
   }
