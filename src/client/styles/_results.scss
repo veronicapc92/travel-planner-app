@@ -1,3 +1,7 @@
+#results {
+  box-sizing: border-box;
+}
+
 .visible {
   padding: 10px 60px 15px 60px;
   top: 50%;
@@ -6,20 +10,28 @@
   position: absolute;
   background-color: white;
   border-radius: 30px;
-  border: 3px solid black;
+  border: 2px solid black;
   font-family: "Quicksand", sans-serif;
   display: flex;
   flex-direction: column;
 }
+
 .hidden {
   display: none;
 }
 
-.close-icon {
+#close-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
   align-self: flex-end;
   margin-right: -25px;
   font-size: 30px;
   cursor: pointer;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.4);
+  }
 }
 
 h3 {
@@ -30,11 +42,15 @@ h3 {
   text-align: center;
 }
 
-img {
+#city-image {
   border-radius: 30px;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
   width: 550px;
   height: auto;
+}
+
+h4 {
+  text-align: center;
 }
 
 .weather-information {
@@ -43,9 +59,42 @@ img {
   grid-template-rows: repeat(2, 1fr);
   text-align: center;
   font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 
-#weather,
-#temperature {
-  font-size: 25px;
+@media (max-width: 850px) {
+  #city-image {
+    width: 65vw;
+    height: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .visible {
+    width: 100%;
+    height: 100vh;
+    padding: 10px 15px;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    align-items: center;
+  }
+
+  #city-image {
+    width: 80vw;
+    margin: 40px 0 0 0;
+  }
+
+  #close-button {
+    margin: 0;
+  }
+
+  .weather-information {
+    width: 80%;
+  }
+
+  h3 {
+    margin-top: 15vh;
+  }
 }

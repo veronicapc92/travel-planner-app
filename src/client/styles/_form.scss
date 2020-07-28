@@ -3,6 +3,8 @@ form {
   $font-family: "Quicksand", sans-serif;
   $font-size: 15px;
   $font-weight: 500;
+  $primary-colour: #fbe7c6;
+  $secondary-colour: #352d33;
 
   margin: 40px auto 0 auto;
   width: 50%;
@@ -30,10 +32,6 @@ form {
   }
 
   #submit {
-    // Colour variables
-    $primary-colour: #fbe7c6;
-    $secondary-colour: #352d33;
-
     // Transition variables
     $duration: 100ms;
     $timing-function: ease-in-out;
@@ -52,6 +50,17 @@ form {
     &:hover {
       background-color: $secondary-colour;
       color: $primary-colour;
+    }
+  }
+
+  #city,
+  #country,
+  #departure-date {
+    border: 2px solid rgba(0, 0, 0, 0.4);
+
+    &:hover,
+    &:focus {
+      border: 2px solid $primary-colour;
     }
   }
 

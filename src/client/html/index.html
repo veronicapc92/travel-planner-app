@@ -29,17 +29,21 @@
         <input type="submit" value="Search" id="submit" />
       </form>
     </div>
-    <footer>By Veronica Perez</footer>
-    <div class="backdrop"></div>
-    <div id="results" class="hidden">
-      <div class="close-icon">×</div>
+    <footer>
+      Website by Veronica Perez | Images from Canva.com
+    </footer>
+    <div id="results" class="visible">
+      <button id="close-button">×</button>
       <h3 id="destination">Destination</h3>
-      <img src="../assets/world-map.png" alt="World map" />
+      <img src="../assets/world-map.png" alt="World map" id="city-image" />
+      <h4 id="weather-data-type"></h4>
       <div class="weather-information">
-        <p id="weather">Sunny</p>
+        <p id="weather">
+          Sunny
+        </p>
         <p id="temperature">25 C</p>
         <p>Probability of rain:<span id="precipitation"></span></p>
-        <p>Windspeed:<span id="windspeed"></span></p>
+        <p>Wind speed:<span id="wind-speed"></span></p>
       </div>
     </div>
   </body>

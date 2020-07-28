@@ -53,10 +53,11 @@ app.get("/data", async (req, res) => {
     data.weather = forecast.weather.description;
     data.windSpeed = forecast.wind_spd;
     data.precipitation = forecast.pop;
+    data.type = forecast.type;
 
-    const imageURL = await getImage(data.country, data.city);
+    const imageUrl = await getImage(data.country, data.city);
     // Updating the data object with a link to an image of the city
-    data.imageURL = imageURL;
+    data.imageUrl = imageUrl;
 
     res.send(data);
   } catch (error) {
