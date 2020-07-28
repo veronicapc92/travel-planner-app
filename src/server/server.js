@@ -44,20 +44,26 @@ app.get("/data", async (req, res) => {
     // Updating city and country in the data object to match the data
     // returned by the API. This is to make sure we display the right
     // city and country names on the client side even if the user has mispelled them
-    data.city = city.name;
-    data.country = city.countryName;
+    if (typeof city !== "undefined") {
+      data.city = city.name;
+      data.country = city.countryName;
 
-    const forecast = await getWeather(city.lat, city.lng, data);
-    // Updating the data object with weather information
-    data.temperature = forecast.temp;
-    data.weather = forecast.weather.description;
-    data.windSpeed = forecast.wind_spd;
-    data.precipitation = forecast.pop;
-    data.type = forecast.type;
+      const forecast = await getWeather(city.lat, city.lng, data);
+      // Updating the data object with weather information
+      data.temperature = forecast.temp;
+      data.weather = forecast.weather.description;
+      data.windSpeed = forecast.wind_spd;
+      data.precipitation = forecast.pop;
+      data.type = forecast.type;
+      data.appTemp = forecast.app_temp;
 
-    const imageUrl = await getImage(data.country, data.city);
-    // Updating the data object with a link to an image of the city
-    data.imageUrl = imageUrl;
+      const imageUrl = await getImage(data.country, data.city);
+      // Updating the data object with a link to an image of the city
+      data.imageUrl = imageUrl;
+    } else {
+      data.city = "not found";
+      data.country = "not found";
+    }
 
     res.send(data);
   } catch (error) {

@@ -15,6 +15,7 @@ const getCityInfo = async (dataObject) => {
 
   try {
     const citiesArray = response.data.geonames;
+    if (response.data.geonames.length === 0) return undefined;
 
     // Finding the city in the results array whose country matches the country
     // specified by the user. This is to avoid displaying the wrong city

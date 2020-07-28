@@ -53,15 +53,17 @@ form {
     }
   }
 
-  #city,
-  #country,
-  #departure-date {
+  .input {
     border: 2px solid rgba(0, 0, 0, 0.4);
 
     &:hover,
     &:focus {
-      border: 2px solid $primary-colour;
+      border-color: $primary-colour;
     }
+  }
+
+  .required {
+    border: 2px solid red;
   }
 
   #city::placeholder,

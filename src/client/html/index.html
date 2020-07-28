@@ -15,35 +15,45 @@
           id="city"
           name="city"
           placeholder="Destination (city)..."
+          class="input"
         />
         <input
           type="text"
           id="country"
           name="country"
           placeholder="What country?"
+          class="input"
         />
         <div>
           <label for="departure-date">Departing:</label>
-          <input type="date" id="departure-date" name="departure-date" />
+          <input
+            type="date"
+            id="departure-date"
+            name="departure-date"
+            class="input"
+          />
         </div>
         <input type="submit" value="Search" id="submit" />
       </form>
     </div>
     <footer>
-      Website by Veronica Perez | Images from Canva.com
+      Website by Veronica Perez | Images from Canva and Pixabay
     </footer>
-    <div id="results" class="visible">
+    <div id="results" class="hidden">
       <button id="close-button">×</button>
-      <h3 id="destination">Destination</h3>
-      <img src="../assets/world-map.png" alt="World map" id="city-image" />
+      <h3 id="destination"></h3>
+      <h4 id="departure"></h4>
+      <img
+        src="../assets/not-found.png"
+        alt="Destination not found"
+        id="city-image"
+      />
       <h4 id="weather-data-type"></h4>
       <div class="weather-information">
-        <p id="weather">
-          Sunny
-        </p>
-        <p id="temperature">25 C</p>
-        <p>Probability of rain:<span id="precipitation"></span></p>
-        <p>Wind speed:<span id="wind-speed"></span></p>
+        <p id="weather"></p>
+        <p id="temperature"></p>
+        <p id="precipitation"></p>
+        <p id="wind-speed"></p>
       </div>
     </div>
   </body>
