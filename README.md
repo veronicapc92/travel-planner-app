@@ -37,6 +37,6 @@ https://pixabay.com/api/docs/
 
 In the .env file, declare your API keys like this:
 
-`GEONAMES_KEY=_<your Geonames username>_`
-`WEATHERBIT_KEY=_<your Weatherbit API key>_`
-`PIXABAY_KEY=_<your Pixabay API key>_`
+`GEONAMES_KEY=<your Geonames username>`
+`WEATHERBIT_KEY=<your Weatherbit API key>`
+`PIXABAY_KEY=<your Pixabay API key>`
