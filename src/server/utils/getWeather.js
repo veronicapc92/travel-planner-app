@@ -1,4 +1,5 @@
 const { axios } = require("./config");
+const { calculateDaysLeft } = require("./calculateDaysLeft");
 
 // Constants
 const ApiKeyString = `&key=${process.env.WEATHERBIT_KEY}`;
@@ -6,10 +7,13 @@ const ApiKeyString = `&key=${process.env.WEATHERBIT_KEY}`;
 // Gets data from Weatherbit
 const getWeather = async (lat, lon, dataObject) => {
   const coordinatesString = `lat=${lat}&lon=${lon}`;
-  const today = new Date();
-  const travelDate = new Date(dataObject.departureDate);
-  const diffTime = Math.abs(travelDate - today);
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  const diffDays = calculateDaysLeft(dataObject.departureDate);
+
+  // If the user goes on holiday in more than 16 days
+  // (16 days is as far as the forecast API can go)
+  if (diffDays > 16) {
+    return undefined;
+  }
 
   // Changing the API URL dynamically depending on the number of
   // days left until the user goes on holiday
